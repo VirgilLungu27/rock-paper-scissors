@@ -29,6 +29,8 @@
             else return 'Scissors';
         }
         function singleRound(playerSelection, computerSelection) {
+            playerSelection = playerPlay();
+            computerSelection = computerPlay();
             if (playerSelection === computerSelection) {
                 return 'Draw. Try again!';
             }
