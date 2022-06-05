@@ -18,43 +18,14 @@
             }
             else return 'Scissors';
         }
-        function playerPlay(b) {
-            b = Math.floor(Math.random()*30) + 1;
-            if (b >= 1 && b <= 10) {
-                return 'Rock';
-            }
-            else if (b > 10 && b <= 20) {
-                return 'Paper';
-            }
-            else return 'Scissors';
-        }
         function playRound(playerSelection, computerSelection) {
             playerSelection = playerPlay();
             computerSelection = computerPlay();
             if (playerSelection === computerSelection) {
-                return 'Draw. Try again!';
-            }
-            else if (playerSelection === 'Scissors') {
-                if (computerSelection === 'Rock') {
-                    return 'You lose! Rock beats scissors.';
-                }
-                else return 'You win! Scissors beat paper.';
-            }
-            else if (playerSelection === 'Paper') {
-                if (computerSelection === 'Rock') {
-                    return 'You win! Paper beats rock.';
-                }
-                else return 'You lose! Scissors beat paper.';
-            }
-            else if (playerSelection === 'Rock') {
-                if (computerSelection === 'Scissors') {
-                    return 'You win! Rock beats scissors.';
-                }
-                else return 'You lose! Paper beats rock.';
-            }
         }
         function game() {
             for (let i = 0; i < 5; i++) {
+                prompt("Enter your input here:");
                 playRound();
                 console.log(playRound);
             }
