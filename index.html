@@ -9,25 +9,41 @@
 <body>
     <script>
         function computerPlay(a) {
-            a = Math.floor(Math.random()*30) + 1;
-            if (a >= 1 && a <= 10) {
-                return 'Rock';
-            }
-            else if (a > 10 && a <= 20) {
-                return 'Paper';
-            }
-            else return 'Scissors';
+            a = ['Rock', 'Paper', 'Scissors'];
+            let b = Math.floor(Math.random()*textArray.length);
+            return b;
         }
         function playRound(playerSelection, computerSelection) {
-            playerSelection = playerPlay();
+            playerSelection = 
             computerSelection = computerPlay();
             if (playerSelection === computerSelection) {
+                return 'Draw. Try again!';
+            }
+            else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+                return 'You lose. Rock beats scissors.';
+            }
+            else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+                return 'You win! Scissors beat paper.';
+            }    
+            else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+                return 'You win! Paper beats rock.';
+            }
+            else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+                return 'You lose! Scissors beat paper.';
+            }
+            else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+                return 'You lose. Paper beats rock.';
+            }
+            else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+                return 'You win! Rock beats scissors.';
         }
+    }
         function game() {
             for (let i = 0; i < 5; i++) {
-                prompt("Enter your input here:");
-                playRound();
-                console.log(playRound);
+                let c = prompt("Enter your input here:");
+                playRound(c);
+                let d = console.log(playRound);
+                return d;
             }
         }
     </script>
