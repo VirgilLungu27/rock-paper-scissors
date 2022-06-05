@@ -44,10 +44,12 @@
             }
     }
         function game() {
+            let result;
             for (let i = 0; i < 5; i++) {
-                playRound();
-                console.log(playRound);
+                result = playRound();
+                console.log(result);
             }
+            return result;
         }
     </script>
 </body>
