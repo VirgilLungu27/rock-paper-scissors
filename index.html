@@ -19,6 +19,32 @@
             else return 'Scissors';
         }
         computerPlay();
+        function singleRound(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return 'Draw. Try again!';
+            }
+            else if (playerSelection = 'Scissors') {
+                if (computerSelection = 'Rock') {
+                    return 'You lose! Rock beats scissors.';
+                }
+                else return 'You win! Scissors beat paper.';
+            }
+            else if (playerSelection = 'Paper') {
+                if (computerSelection = 'Rock') {
+                    return 'You win! Paper beats rock.';
+                }
+                else return 'You lose! Scissors beat paper.';
+            }
+            else if (playerSelection = 'Rock') {
+                if (computerSelection = 'Scissors') {
+                    return 'You win! Rock beats scissors.';
+                }
+                else return 'You lose! Paper beats rock.';
+            }
+        }
+        const playerSelection = 'Rock';
+        const computerSelection = computerPlay();
+        console.log(singleRound(playerSelection, computerSelection));
     </script>
 </body>
 </html>
