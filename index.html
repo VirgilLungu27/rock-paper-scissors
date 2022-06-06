@@ -8,12 +8,14 @@
 </head>
 <body>
     <script>
+        let playerSelection;
+        let computerSelection;
         function computerPlay(a) {
             a = ['Rock', 'Paper', 'Scissors'];
             let b = Math.floor(Math.random()*a.length);
             return a[b];
         }
-        function playRound(playerSelection, computerSelection) {
+        function playRound() {
             playerSelection = prompt("Enter your input here:");
             computerSelection = computerPlay();
             let output;
@@ -57,7 +59,7 @@
     }
         function game() {
             for (let i = 0; i < 5; i++) {
-                playRound();
+                let output = playRound();
                 
             }
         }
