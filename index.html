@@ -61,32 +61,32 @@
             let output;
             let playerScore = 0;
             let computerScore = 0;
+            let finalResult = [playerScore, computerScore];
             for (let i = 0; i < 5; i++) {
                 output = playRound(playerSelection, computerSelection);
-                console.log(output);
                 if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-                    computerScore++;
+                    finalResult[computerScore]++;
                 }
                 else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
                     output = 'You win! Paper beats rock.';
-                    playerScore++;
+                    finalResult[playerScore]++;
                 }
                 else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-                    playerScore++;
+                    finalResult[playerScore]++;
                 }
                 else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-                    playerScore++;
+                    finalResult[playerScore]++;
                 }
                 else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-                    computerScore++;
+                    finalResult[computerScore]++;
                 }
                 else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-                    playerScore++;
+                    finalResult[playerScore]++;
             }
-            return playerScore;
-            return computerScore;
+            console.log(output);
         }
-    }
+        return (finalResult);
+}
     </script>
 </body>
 </html>
