@@ -16,40 +16,50 @@
         function playRound(playerSelection, computerSelection) {
             playerSelection = prompt("Enter your input here:");
             computerSelection = computerPlay();
+            let output;
             let result = playerSelection.localeCompare(computerSelection);
             if (result === 0) {
-                return 'Draw. Try again!';
+                output = 'Draw. Try again!';
+                return output;
             }
             else if (result === -1) {
                 if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-                    return 'You lose. Scissors beat paper.';
+                    output = 'You lose. Scissors beat paper.';
+                    return output;
                 }
                 else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-                    return 'You win! Paper beats rock.';
+                    output = 'You win! Paper beats rock.';
+                    return output;
                 }
                 else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-                    return 'You win! Rock beats scissors.';
+                    output = 'You win! Rock beats scissors.';
+                    return output;
                 }
+                else output = 'Invalid.';
+                return output;
+            }
             else if (result === 1) {
                 if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-                    return 'You win! Scissors beat paper.';
+                    output = 'You win! Scissors beat paper.';
+                    return output;
                 }
                 else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-                    return 'You lose. Rock beats scissors.';
+                    output = 'You lose. Rock beats scissors.';
+                    return output;
                 }
                 else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-                    return 'You lose. Paper beats rock.';
+                    output = 'You lose. Paper beats rock.';
+                    return output;
                 }
-            }
+                else output = 'Invalid.';
+                return output;
             }
     }
         function game() {
-            let result;
             for (let i = 0; i < 5; i++) {
-                result = playRound();
-                console.log(result);
+                playRound();
+                
             }
-            return result;
         }
     </script>
 </body>
