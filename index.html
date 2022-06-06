@@ -58,8 +58,14 @@
             }
     }
         function game() {
-                let output = playRound(playerSelection, computerSelection);
-                return output;
+            let output;
+            let playerScore = 0;
+            let computerScore = 0;
+            for (let i = 0; i < 5; i++) {
+                output = playRound(playerSelection, computerSelection);
+                console.log(output);
+            }
+            return output;
         }
     </script>
 </body>
