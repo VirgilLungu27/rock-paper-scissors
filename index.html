@@ -64,9 +64,29 @@
             for (let i = 0; i < 5; i++) {
                 output = playRound(playerSelection, computerSelection);
                 console.log(output);
+                if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+                    computerScore++;
+                }
+                else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+                    output = 'You win! Paper beats rock.';
+                    playerScore++;
+                }
+                else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+                    playerScore++;
+                }
+                else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+                    playerScore++;
+                }
+                else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+                    computerScore++;
+                }
+                else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+                    playerScore++;
             }
-            return output;
+            return playerScore;
+            return computerScore;
         }
+    }
     </script>
 </body>
 </html>
