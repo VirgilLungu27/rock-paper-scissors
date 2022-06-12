@@ -1,94 +1,54 @@
+<!-- index.html -->
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissor</title>
 </head>
 <body>
-    <script>
-        let playerSelection;
-        let computerSelection;
-        function computerPlay(a) {
-            a = ['Rock', 'Paper', 'Scissors'];
-            let b = Math.floor(Math.random()*a.length);
-            return a[b];
-        }
-        function playRound() {
-            playerSelection = prompt("Enter your input here:");
-            computerSelection = computerPlay();
-            let output;
-            let result = playerSelection.localeCompare(computerSelection);
-            if (result === 0) {
-                output = 'Draw. Try again!';
-                return output;
-            }
-            else if (result === -1) {
-                if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-                    output = 'You lose. Scissors beat paper.';
-                    return output;
-                }
-                else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-                    output = 'You win! Paper beats rock.';
-                    return output;
-                }
-                else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-                    output = 'You win! Rock beats scissors.';
-                    return output;
-                }
-                else output = 'Invalid.';
-                return output;
-            }
-            else if (result === 1) {
-                if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-                    output = 'You win! Scissors beat paper.';
-                    return output;
-                }
-                else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-                    output = 'You lose. Rock beats scissors.';
-                    return output;
-                }
-                else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-                    output = 'You lose. Paper beats rock.';
-                    return output;
-                }
-                else output = 'Invalid.';
-                return output;
-            }
-    }
-        function game() {
-            let output;
-            let playerScore = 0;
-            let computerScore = 0;
-            let finalResult = []; 
-            for (let i = 0; i < 5; i++) {
-                output = playRound(playerSelection, computerSelection);
-                if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-                    computerScore++;
-                }
-                else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-                    playerScore++;
-                }
-                else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-                    playerScore++;
-                }
-                else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-                    playerScore++;
-                }
-                else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-                    computerScore++;
-                }
-                else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-                    computerScore++;
-                }
-                else {
-                    console.log('Draw or invalid.');
-                }
-            console.log(output);
-        }
-        return finalResult = [playerScore, computerScore];
-}
-    </script>
+    <section class="game">
+        <!--Title -->
+        <div class="title">Rock Paper Scissor</div>
+         
+          <!--Display Score of player and computer -->
+        <div class="score"> 
+            <div class="playerScore">
+                <h2>Player</h2>
+                <p class="p-count count">0</p>
+ 
+            </div>      
+            <div class="computerScore">
+                <h2>Computer</h2>
+                <p class="c-count count">0</p>
+ 
+            </div>
+        </div>
+       
+        <div class="move">Choose your move</div>
+         
+          <!--Number of moves left before game ends -->
+        <div class="movesleft">Moves Left: 10 </div>
+         
+          <!--Options available to player to play game -->
+        <div class="options">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissor">Scissors</button>   
+        </div>
+         
+          <!--Final result of game -->
+        <div class="result"></div>
+         
+          <!--Reload the game -->
+        <button class="reload"></button>
+ 
+    </section>
+ 
+    <script src="app.js"></script>
 </body>
 </html>
